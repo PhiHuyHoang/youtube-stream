@@ -3,6 +3,9 @@ var router = express.Router();
 var ytdl = require('ytdl');
 var ffmpeg = require('fluent-ffmpeg');
 
+
+var port = process.env.PORT || 8080;
+
 router.get('/', function(req, res) {
     var url = 'https://www.youtube.com/watch?v=GgcHlZsOgQo';
   
