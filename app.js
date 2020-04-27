@@ -6,19 +6,25 @@ var ffmpeg = require('fluent-ffmpeg');
 const app = express();
 app.use('/static', express.static('./static'));
 
-app.listen(3000, () => { 
+var port = process.env.PORT || 8000
+
+
+app.listen(port, () => { 
     console.log("It Works!");
 });
 
 app.get('/', function(req, res) {
     var url = 'https://www.youtube.com/watch?v=GgcHlZsOgQo';
-  
-    // Audio format header (OPTIONAL)
-    res.set({ "Content-Type": "audio/mpeg" });
-  
-    // Send compressed audio mp3 data
-    ffmpeg()
-    .input(ytdl(url))
-    .toFormat('mp3')
-    .pipe(res);
-  });
+  var video = ytdl(url)
+
+  res.set({
+      "Content-Type": "audio/mpeg"
+  })
+
+  new ffmpeg({source: video})
+      .toFormat('mp3')
+      .writeToStream(res, function(data, err) {
+        if (err) console.log(err)
+      })
+
+});
