@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const ytdl = require('tdl-core');
+const ytdl = require('ytdl-core');
 
 const app = express();
 app.use('/static', express.static('./static'));
