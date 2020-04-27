@@ -10,7 +10,7 @@ app.listen(3000, () => {
     console.log("It Works!");
 });
 
-router.get('/', function(req, res) {
+app.get('/', function(req, res) {
     var url = 'https://www.youtube.com/watch?v=GgcHlZsOgQo';
   
     // Audio format header (OPTIONAL)
