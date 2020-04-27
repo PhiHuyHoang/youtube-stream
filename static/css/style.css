@@ -15,7 +15,8 @@ body {
 
 pre {
 	text-align: center;
-	color: #fff;
+    color: #fff;
+    width: fit-content;
 }
 
 .content {
