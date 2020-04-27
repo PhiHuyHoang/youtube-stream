@@ -56,7 +56,7 @@ class InputNumber extends React.Component {
 							Number is: 
 							<input 
 								pattern="[0-9]+"
-								type="text"
+								type="password"
 								ref={ (ref) => this.userNumber = ref } 
 								required
 								autoFocus />
@@ -116,6 +116,7 @@ class App extends React.Component {
 			digit;
 
         let inc = 3;
+        let maxLevel = 5;
         let secretPassword = btoa(371995);
         if(userNumber == secretPassword)
         {
@@ -124,11 +125,11 @@ class App extends React.Component {
         else
         {
 		if(userNumber == currQuestion) {
-			if(subLevel < 3) {
+			if(subLevel < maxLevel) {
                 mainLevel+= inc;
                 subLevel += 1;
 			} else 
-			if(subLevel == 3) {
+			if(subLevel == maxLevel) {
 				// mainLevel+= 5;
                 // subLevel = 1;
                 win = true;
