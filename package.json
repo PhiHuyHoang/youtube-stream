@@ -23,7 +23,7 @@
     "express": "^4.17.1",
     "fluent-ffmpeg": "^2.1.2",
     "nodemon": "^2.0.3",
-    "socket.io": "^2.3.0",
+    "socket.io": "^2.4.0",
     "youtube-audio-stream": "^0.3.5",
     "ytdl-core": "^2.1.1"
   }
